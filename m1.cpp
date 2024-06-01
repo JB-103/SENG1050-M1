@@ -16,7 +16,7 @@ struct FlightInfo* findFlight(struct FlightInfo* head, char* destination, char* 
 void deleteNode(struct FlightInfo* node, struct FlightInfo** head, struct FlightInfo** tail);
 
 #define MAX_CHAR 31
-#define MAX_STRINGS 2
+#define MAX_STRINGS 10
 
 struct FlightInfo
 {
