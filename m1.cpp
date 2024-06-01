@@ -65,7 +65,7 @@ int main(void) {
 		struct FlightInfo* newFlight = (struct FlightInfo*)malloc(sizeof(struct FlightInfo));
 		if (newFlight == NULL)
 		{
-			printf("No more memory available.");
+			printf("No more memory available.\n");
 			break;
 		}
 
@@ -74,7 +74,6 @@ int main(void) {
 		if (newFlight->destination == NULL || newFlight->date == NULL)
 		{
 			printf("No more memory available.\n");
-			free(newFlight);
 			break;
 		}
 
