@@ -146,32 +146,39 @@ int main(void) {
 		newFlightD->prevFlight = NULL;
 
 		// Insert into the sorted linked list by destination
-		if (headByDestination == NULL) {
+		if (headByDestination == NULL) 
+		{
 			headByDestination = newFlightD;
 			tailByDestination = newFlightD;
 		}
-		else {
+		else 
+		{
 			struct FlightInfo* current = headByDestination;
 			struct FlightInfo* prev = NULL;
 
-			while (current != NULL && strcmp(current->destination, newFlightD->destination) < 0) {
+			while (current != NULL && strcmp(current->destination, newFlightD->destination) < 0) 
+			{
 				prev = current;
 				current = current->nextFlight;
 			}
 
-			if (prev == NULL) {
+			if (prev == NULL) 
+			{
 				newFlightD->nextFlight = headByDestination;
 				headByDestination->prevFlight = newFlightD;
 				headByDestination = newFlightD;
 			}
-			else {
+			else 
+			{
 				prev->nextFlight = newFlightD;
 				newFlightD->prevFlight = prev;
 				newFlightD->nextFlight = current;
-				if (current != NULL) {
+				if (current != NULL) 
+				{
 					current->prevFlight = newFlightD;
 				}
-				else {
+				else 
+				{
 					tailByDestination = newFlightD;
 				}
 			}
@@ -234,7 +241,8 @@ int main(void) {
 
 			if (headByFare == NULL)
 			{
-				headByFare = tailByFare = newFlight;
+				headByFare = newFlight;
+				tailByFare = newFlight;
 			}
 			else
 			{
